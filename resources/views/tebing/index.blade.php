@@ -4,7 +4,7 @@
 @section('container')
 
 <div class="container">
-    <h1 class="mt-3">Daftar Tebing</h1>
+    <h1 class="mt-3">Crag List</h1>
     <a href="/crags/create" class="btn btn-primary mb-3">Tambah Tebing Baru</a>
     @if (session('status'))
         <div class="alert alert-success">
