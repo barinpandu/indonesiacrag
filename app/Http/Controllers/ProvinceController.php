@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CobaBikin;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
-class CobaBikinsController extends Controller
+class ProvinceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CobaBikinsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CobaBikin  $cobaBikin
+     * @param  \App\Models\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function show(CobaBikin $cobaBikin)
+    public function show(Province $province)
     {
         //
     }
@@ -52,10 +52,10 @@ class CobaBikinsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CobaBikin  $cobaBikin
+     * @param  \App\Models\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function edit(CobaBikin $cobaBikin)
+    public function edit(Province $province)
     {
         //
     }
@@ -64,10 +64,10 @@ class CobaBikinsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CobaBikin  $cobaBikin
+     * @param  \App\Models\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CobaBikin $cobaBikin)
+    public function update(Request $request, Province $province)
     {
         //
     }
@@ -75,10 +75,10 @@ class CobaBikinsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CobaBikin  $cobaBikin
+     * @param  \App\Models\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CobaBikin $cobaBikin)
+    public function destroy(Province $province)
     {
         //
     }

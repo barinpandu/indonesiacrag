@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CragsController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +27,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('contact');
 // });
 
-Route::get('/', 'App\Http\Controllers\PagesController@home');
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
+Route::get('/', [PagesController::class, 'home']);
+Route::get('/about', [PagesController::class, 'about']);
 Route::get('/contact', 'App\Http\Controllers\PagesController@contact');
 
-Route::get('/crags', 'App\Http\Controllers\CragsController@index');
-Route::get('/crags/create', 'App\Http\Controllers\CragsController@create');
-Route::get('/crags/{tebing}', 'App\Http\Controllers\CragsController@show');
-Route::post('/crags', 'App\Http\Controllers\CragsController@store');
+Route::resource('crags', CragsController::class);
+

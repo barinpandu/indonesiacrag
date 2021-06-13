@@ -7,11 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 
 // cara default laravel
-class Tebing extends Model
+class Crag extends Model
 {
     use HasFactory;
     // tambahkan variabel guarded atau fillable bila menggunakan method create()
     protected $guarded = ['id'];
+
+    protected $fillable = [
+        'nama',
+        'lokasi',
+        'provinsi',
+        'jenis',
+        'retribusi',
+        'jumlah jalur',
+        'cara'
+    ];
 }
 
 // cara setting tabel sendiri

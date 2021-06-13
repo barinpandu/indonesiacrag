@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tebing;
+use App\Models\Crag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,8 +18,11 @@ class CragsController extends Controller
     // pake quiry builder
         // $tebing = DB::table('tebings')->get();
     // pake Eloquent
-        $tebings = Tebing::all();
-        return view('tebing/index', compact('tebings'));
+        $data['tebings'] = Crag::all();
+
+        return view('tebing.index', $data);
+        // return view('tebing/index', ['tebings' => $tebings]);
+        // return view('tebing/index', compact('tebings'));
     }
 
     /**
@@ -29,7 +32,7 @@ class CragsController extends Controller
      */
     public function create()
     {
-        return view('tebing/create');
+        return view('tebing.create');
     }
 
     /**
@@ -64,13 +67,16 @@ class CragsController extends Controller
         // ])
 
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|integer',
             'lokasi' => 'required',
             'provinsi' => 'required',
             'jenis_batuan' => 'required',
-            'retribusi' => 'required',
+            'retribusi' => 'required|integer',
             'jumlah_jalur' => 'required',
             'jenis_pemanjatan' => 'required',
+        ], [
+            'nama.required' => 'nama tidak boleh kosong',
+            'nama.integer' => 'nama harus dalam bentuk angka'
         ]);
 
         Tebing::create($request->all());
@@ -85,7 +91,7 @@ class CragsController extends Controller
      */
     public function show(Tebing $tebing)
     {
-        return view('tebing/show', compact('tebing'));
+        return view('tebing.show', compact('tebing'));
     }
 
     /**
